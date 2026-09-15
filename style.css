@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes slideRTL {
+            from { opacity: 0; transform: translateX(60px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-fade-in-up { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-slide-rtl { animation: slideRTL 0.5s ease-out forwards; }
+
+        .btn-gradient {
+            background: linear-gradient(135deg, #be185d 0%, #db2777 100%);
+            box-shadow: 0 4px 15px rgba(190, 24, 93, 0.3);
+            transition: all 0.3s ease;
+        }
+        .btn-gradient:hover {
+            box-shadow: 0 6px 20px rgba(190, 24, 93, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 25px 50px -12px rgba(190, 24, 93, 0.15);
+        }
+
+        .nav-spread {
+            transition: max-width 0.5s ease-in-out, opacity 0.4s ease-in-out, margin 0.5s ease-in-out;
+            max-width: 0; opacity: 0; overflow: hidden; white-space: nowrap;
+        }
+        .nav-spread.open { max-width: 800px; opacity: 1; margin-right: 1rem; }
+        
+        .faq-scroll::-webkit-scrollbar { width: 6px; }
+        .faq-scroll::-webkit-scrollbar-track { background: transparent; }
+        .faq-scroll::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 10px; }
+        .faq-scroll::-webkit-scrollbar-thumb:hover { background: #be185d; }
+
+        .artist-square {
+            background-size: cover; background-position: center;
+            position: relative; overflow: hidden; 
+        }
+        .artist-square::before {
+            content: ''; position: absolute; inset: 0;
+            background-color: rgba(0, 0, 0, 0.45); transition: background-color 0.3s; z-index: 1; 
+        }
+        .artist-square:hover::before { background-color: rgba(0, 0, 0, 0.2); }
+        .artist-name-text { position: relative; z-index: 2; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8); }
+
+        .product-card-button {
+            display: block; width: 100%; text-align: left; padding: 1rem;
+            border-radius: 0.75rem; border: 1px solid #fbcfe8;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: #ffffff; 
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+        }
+        .product-card-button:hover {
+            transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); background-color: #fce7f6;
+        }
+
+        .lazada-btn {
+            background-color: #be185d; color: white;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .lazada-btn:hover { background-color: #9d174d; transform: translateY(-1px); }
